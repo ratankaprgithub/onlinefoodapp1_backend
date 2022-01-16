@@ -40,7 +40,7 @@ public class Item {
 	@ManyToMany(cascade = CascadeType.ALL,mappedBy = "itemList")
 	private List<Restaurant> restaurants=new ArrayList<Restaurant>();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL,optional = true)
 	@JsonIgnore
 	private FoodCart foodCart;
 

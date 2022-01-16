@@ -23,4 +23,6 @@ public interface IItemService {
 	public List<Item> viewAllItems(String catName) throws ItemException;
 
 	public List<Item> viewAllItemsByName(String itmName) throws ItemException;
+	
+	public List<Item> viewAllItems()throws ItemException;
 }

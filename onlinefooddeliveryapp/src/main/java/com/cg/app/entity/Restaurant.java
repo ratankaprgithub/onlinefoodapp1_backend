@@ -23,7 +23,7 @@ public class Restaurant {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String restaurantId;
+	private Integer restaurantId;
 	
 	private String restaurantName;
 	

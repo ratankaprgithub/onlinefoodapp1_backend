@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class LoginBean {
 	
-	private String userName;
+	private String username;
 	private String password;
 	
 
