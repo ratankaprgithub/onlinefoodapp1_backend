@@ -10,11 +10,13 @@ public interface ICartService {
 	public FoodCart addItemToCart(FoodCart cart, Item item) throws CartException, ItemException;
 
 	public FoodCart reduceQuantity(FoodCart cart, Item item, int quantity) throws CartException, ItemException;
-
+	
+	public FoodCart viewCartById(Integer cartid)throws CartException;
+	
 	public FoodCart removeItem(FoodCart cart, Item item) throws ItemException, CartException;
 
 	public FoodCart clearCart(FoodCart cart) throws CartException;
 
-	FoodCart increaseQuantity(FoodCart cart, Item item, Integer quantity) throws  ItemException;
+	public FoodCart increaseQuantity(FoodCart cart, Item item, Integer quantity) throws  ItemException;
 
 }

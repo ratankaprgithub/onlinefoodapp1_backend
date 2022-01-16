@@ -46,6 +46,18 @@ public class FoodCart {
 	  @Column(name="Quantity")
 	  Map<Item,Integer> item_cartQty = new HashMap<Item,Integer>();
 	  
+	  
+
+		
+		
+		public void removeItem(Item item) {
+				
+			itemList.remove(item);
+			
+				if(item_cartQty.containsKey(item)) {
+					item_cartQty.remove(item);
+				}
+		}
 	 
 
 }
