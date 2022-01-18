@@ -128,4 +128,50 @@ public class IItemServiceImpl implements IItemService {
 			throw new ItemException("there is no any item yet...");
 	}
 
-}
+	@Override
+	public Restaurant addItemToRestaurant(Integer restId, Item item) throws RestaurantException, ItemException {
+		
+		 Restaurant rest= restRepo.findById(restId).orElseThrow(() -> new RestaurantException("Invalid Restautant Id "+restId) );
+		
+		 
+		 Category cat= item.getCategory();
+		 
+		 Category existingCat= catRepo.findByCategoryName(cat.getCategoryName());
+		 
+		 
+		 if(existingCat == null) {
+			 
+			 Category newCat=new Category();
+			 newCat.setCategoryName(cat.getCategoryName());
+			 
+			 Category newSavedCat= catRepo.save(newCat);
+			 item.setCategory(newSavedCat);
+			 Item saveditem= itemRepo.save(item);
+			 rest.getItemList().add(saveditem);
+			 return restRepo.save(rest);
+		 }else
+		 {		 	item.setCategory(existingCat);
+		 	
+			 Item savedItem= itemRepo.save(item);
+			 
+			 rest.getItemList().add(savedItem);
+			 
+			return restRepo.save(rest);
+		 } 
+	}	
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+	}
+
+

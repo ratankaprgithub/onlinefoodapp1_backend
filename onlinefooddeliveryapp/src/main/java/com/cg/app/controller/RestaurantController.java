@@ -31,50 +31,23 @@ public class RestaurantController {
 	
 	request data:-
 	
+		
 	{
-	 		"restaurantName": "bluefox",
-             "managerName": "Ratan",
-             "contactNumber": "8756434",
+	 		"restaurantName": "alpha",
+             "managerName": "Ravi",
+             "contactNumber": "9756434",
              "address": {
 
-                    "buildingName": "bul10",
-                    "streetNumber": "st10",
-                    "area": "ar10",
-                    "city": "chennai",
-                    "state": "TN",
+                    "buildingName": "bul5",
+                    "streetNumber": "st5",
+                    "area": "ar5",
+                    "city": "Hydrabad",
+                    "state": "Telangana",
                     "country": "IND",
-                    "pincode": "342323"
+                    "pincode": "542323"
 
-             },
-             "itemList": [
-
-                 {
-                     "itemName": "dosa",
-                     "quantity": 5,
-                     "cost": 100,
-                     "category": {
-                         "categoryName": "southIndian"
-                     }
-                 },
-                 {
-                      "itemName": "chickenBirani",
-                     "quantity": 7,
-                     "cost": 150,
-                     "category": {
-                         "categoryName": "nonveg"
-                     }
-                 }
-
-
-             ]
-
-	 	
-	}
-
-
-	
-	
-	
+             }
+}
 	
 	
 	*/
@@ -99,34 +72,36 @@ public class RestaurantController {
 	request data:-
 	
 	{
-    "restaurantId": 1,
-    "restaurantName": "alpha1",
+    "restaurantId": 3,
+    "restaurantName": "alpha",
     "managerName": "Ravi",
-    "contactNumber": "756434",
+    "contactNumber": "9756434",
     "itemList": [
         {
             "itemId": 8,
             "itemName": "idli",
-            "quantity": 8,
-            "cost": 130.0,
+            "quantity": 50,
+            "cost": 100,
             "category": {
-                "catId": 5,
-                "categoryName": "southIndian"
-            },
-            "restaurants": []
+                "catId": 6,
+                "categoryName": "south-indian"
+            }
+            
         }
     ],
     "address": {
-        "addressId": 2,
-        "buildingName": "bul15",
-        "streetNumber": "st15",
-        "area": "ar15",
-        "city": "hyd",
-        "state": "TL",
+        "addressId": 4,
+        "buildingName": "bul5",
+        "streetNumber": "st5",
+        "area": "ar5",
+        "city": "Hydrabad",
+        "state": "Telangana",
         "country": "IND",
-        "pincode": "42323"
+        "pincode": "542323"
     }
 }
+	
+	
 	
 	
 	
@@ -170,6 +145,10 @@ public class RestaurantController {
 		return restaurantService.viewNearByRestaurant(location);
 		
 	}
+	
+
+	
+	
 	
 }
 

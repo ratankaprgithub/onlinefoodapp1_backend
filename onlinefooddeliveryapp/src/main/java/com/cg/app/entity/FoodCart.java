@@ -39,7 +39,7 @@ public class FoodCart {
 	private Customer customer;
 	
 	
-	
+	  @JsonIgnore
 	  @ElementCollection  
 	  @CollectionTable(name="Cart_Item_Quantity")
 	  @MapKeyJoinColumn(name = "itemId") 

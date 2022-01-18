@@ -12,9 +12,9 @@ import com.cg.app.exceptions.OrderException;
 public interface IOrderService {
 	public OrderDetails addOrder(OrderDetails order) throws OrderException, CartException;
 	public OrderDetails updateOrder(OrderDetails order) throws OrderException;
-	public OrderDetails removeOrder(OrderDetails order) throws OrderException;
-	public OrderDetails viewOrder(OrderDetails order) throws OrderException;
-	public List<OrderDetails> viewAllOrders(Restaurant restaurant) throws OrderException;
-	public List<OrderDetails> viewAllOrders(Customer customer) throws OrderException, CustomerException;
+	public OrderDetails removeOrder(Integer orderId) throws OrderException;
+	public OrderDetails viewOrder(Integer orderId) throws OrderException;
+	public List<OrderDetails> viewAllOrdersByRestaurant(Integer restId) throws OrderException;
+	public List<OrderDetails> viewAllOrdersByCustomer(Integer customerId) throws OrderException, CustomerException;
 
 }

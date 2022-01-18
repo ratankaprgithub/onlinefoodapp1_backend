@@ -142,15 +142,17 @@ public class ICartServiceImpl implements ICartService {
 	@Override
 	public FoodCart increaseQuantity(FoodCart cart, Item item, Integer quantity) throws ItemException {
 		
-		if((cart!=null) &&(item!=null)&&(quantity>0)){
-	
+		
+		if((cart !=null) && (item != null) && (quantity >0)) {
+			
 			
 			if(cartRepo.existsById(cart.getCartId())) {	
 				
 				Map<Item,Integer> item_cartQty = cart.getItem_cartQty();
 				
 				if(item_cartQty.containsKey(item)) {
-				
+					
+					
 					Integer currQty = item_cartQty.get(item);
 					Integer availQty = item.getQuantity();
 					
@@ -166,16 +168,21 @@ public class ICartServiceImpl implements ICartService {
 						}
 						throw new ItemException(item.getItemName()+" quantity exceeds available quantity");
 					}
-				}
 				throw new ItemException(item.getItemName()+" quantity exceeds available quantity");
 			}
+	
+				throw new ItemException("Item not found in Cart...");
+								
+			}
+			
+			throw new CartException("Invalid Cart...");
+			
 		}
+		throw new CartException("invlaid Cart/Item/quantity");
 		
-		throw new ItemException("Cart with id "+cart.getCartId()+" not found");
-	}
-
-
-
+		
+		
+	}		
 
 
 

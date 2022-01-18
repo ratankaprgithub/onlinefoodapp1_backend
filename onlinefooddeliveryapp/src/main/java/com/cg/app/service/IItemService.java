@@ -3,6 +3,7 @@ package com.cg.app.service;
 import java.util.List;
 
 import com.cg.app.entity.Item;
+import com.cg.app.entity.Restaurant;
 import com.cg.app.exceptions.ItemException;
 import com.cg.app.exceptions.RestaurantException;
 
@@ -25,4 +26,10 @@ public interface IItemService {
 	public List<Item> viewAllItemsByName(String itmName) throws ItemException;
 	
 	public List<Item> viewAllItems()throws ItemException;
+	
+	public Restaurant addItemToRestaurant(Integer restId,Item item)throws RestaurantException,ItemException;
+	
+	
+	
+	
 }

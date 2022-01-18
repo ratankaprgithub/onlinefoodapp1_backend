@@ -33,10 +33,12 @@ public class Item {
 	
 	private Double cost;
 	
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Category category;
 	
 	
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL,mappedBy = "itemList")
 	private List<Restaurant> restaurants=new ArrayList<Restaurant>();
 	

@@ -15,7 +15,9 @@ import com.cg.app.entity.FoodCart;
 import com.cg.app.entity.Item;
 import com.cg.app.exceptions.CartException;
 import com.cg.app.exceptions.ItemException;
+import com.cg.app.service.ICartService;
 import com.cg.app.service.ICartServiceImpl;
+import com.cg.app.service.IItemService;
 import com.cg.app.service.IItemServiceImpl;
 
 
@@ -27,11 +29,22 @@ public class CartController {
 	
 	
 	@Autowired
-	private ICartServiceImpl cartService;
+	private ICartService cartService;
 	
 	@Autowired
-	private IItemServiceImpl itemService;
+	private IItemService itemService;
 	
+	
+	/*
+	
+	{
+	    "itemId": 15   
+	}
+	
+	
+	
+	
+	*/
 
 	@PostMapping("/additem/{cartid}")
 	public FoodCart addItemToCart(@RequestBody Item item,@PathVariable("cartid") Integer cartId){	
@@ -41,6 +54,7 @@ public class CartController {
 		return cartService.addItemToCart(cart, item);
 
 	}
+	
 	
 	
 	@GetMapping("/viewcart/{cartid}")

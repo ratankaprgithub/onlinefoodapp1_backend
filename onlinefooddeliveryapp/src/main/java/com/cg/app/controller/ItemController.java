@@ -145,5 +145,28 @@ public class ItemController {
 	}
 	
 	
+	/*
+	
+	{
+
+    "itemName": "gulabjamun",
+    "quantity": 50,
+    "cost": 100,
+    "category": {
+        "categoryName": "desert"
+    }
+    
+}
+	
+	
+	*/
+	@PutMapping("/add/toRestaurant/{restId}")
+	public Restaurant addItemToRestaurant(@PathVariable("restId") Integer restId, @RequestBody Item item) {
+		
+		return itemService.addItemToRestaurant(restId, item);
+		
+		
+	}
+	
 	
 }
